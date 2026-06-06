@@ -1,0 +1,85 @@
+/* Estilos básicos y estados de tarea */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+.controls {
+  margin: 12px 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.auth-section {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status-message {
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.status-message.info { background-color: #e7f3ff; color: #1a56db; border: 1px solid #b6d4fe; }
+.status-message.success { background-color: #e6ffed; color: #1f6e3f; border: 1px solid #9ae6b4; }
+.status-message.error { background-color: #fcebea; color: #c53030; border: 1px solid #feb2b2; }
+.status-message.warning { background-color: #fff7e6; color: #975a16; border: 1px solid #f6e05e; }
+
+.loading {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.task-counter {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.hidden { display: none; }
+
+.form-errors {
+  margin-top: 10px;
+  border: 1px solid #e74c3c;
+  background-color: #fdecea;
+  color: #a94442;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.form-errors ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.form-errors li {
+  margin-bottom: 4px;
+}
+
+.task-details { color: #666; font-size: 0.9em; margin-top: 6px; }
+
+/* Estados de tarea */
+.overdue { background-color: #ffd6d6; }
+.upcoming { background-color: #fff5cc; }
+.no-deadline { background-color: #e6f7ff; }
+
+/* Botones */
+button { margin-right: 6px; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.no-tasks { margin-top: 12px; font-style: italic; }

@@ -3,20 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="styles.css">
     <title>To-Do list</title>
 </head>
 <body>
     <h1>To-Do List</h1>
+    <div id="authSection" class="auth-section">
+        <input type="text" id="loginUsername" placeholder="Usuario">
+        <input type="password" id="loginPassword" placeholder="Contraseña">
+        <button id="loginButton">Iniciar sesión</button>
+        <button id="logoutButton" class="hidden">Cerrar sesión</button>
+    </div>
+    <div id="statusMessage" class="status-message hidden" aria-live="polite"></div>
+    <div id="loadingIndicator" class="loading hidden">Cargando...</div>
     <button id="loadTasksButton">Cargar Tareas</button>
 
     <h2>Agregar Nueva Tarea</h2>
     <input type="text" id="tituloTarea" placeholder="Título de la tarea">
     <input type="text" id="descripcionTarea" placeholder="Descripción de la tarea">
     <input type="datetime-local" id="fechaLimiteTarea">
-    <button id="agregarTareaButton">Agregar Tarea</button>
+    <button id="agregarTareaButton" disabled>Agregar Tarea</button>
+    <div id="formErrors" class="form-errors hidden" aria-live="polite"></div>
 
-    <ul id="lista-tareas"></ul>
+    <div id="controls" class="controls">
+        <input type="text" id="searchInput" placeholder="Buscar por título">
+        <label for="sortSelect">Ordenar por fecha:</label>
+        <select id="sortSelect">
+            <option value="none">Sin ordenar</option>
+            <option value="asc">Más antiguas primero</option>
+            <option value="desc">Más recientes primero</option>
+        </select>
+        <div id="taskCounter" class="task-counter">0 tareas</div>
+    </div>
+
+    <h2>Tareas</h2>
+    <table id="tablaTareas">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha Límite</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="bodyTablaTareas">
+        </tbody>
+    </table>
+
+    <p id="noTasksMessage" class="no-tasks hidden">No hay tareas para mostrar.</p>
     
     <script src="./app.js"></script>
 </body>
