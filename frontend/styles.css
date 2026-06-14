@@ -118,13 +118,18 @@ li.tareaNormal {
     background-color: #d4edda;
     border-left: 4px solid #28a745;
 }
+li.tareaSinFecha {
+    background-color: #cce5ff;
+    border-left: 4px solid #007bff;
+}
 
 /* Botón eliminar */
-li button {
+.botonEliminar {
+    margin: 1vw;
     background-color: #e74c3c;
 }
 
-li button:hover {
+.botonEliminar:hover {
     background-color: #c0392b;
 }
 

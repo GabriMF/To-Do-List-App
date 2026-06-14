@@ -27,7 +27,7 @@
         <input type="password" id="loginPass">
 
         <button id="loginButton">Iniciar sesión</button>
-        <span id="mensaje" class="error"></span>
+        <span id="mensajeLogin" class="error"></span>
     </div>
 
     
@@ -48,13 +48,12 @@
                     <label for="descripcionTarea">Descripción:</label>
                     <input type="text" id="descripcionTarea">
 
-                    <label for="fechaLimiteTarea">Fecha límite:</label>
+                    <label for="fechaLimiteTarea">Fecha límite (opcional):</label>
                     <input type="datetime-local" id="fechaLimiteTarea">
 
                     <button type="submit">Crear tarea</button>
                 </form>
-
-                <p id="mensaje" class="error"></p>
+                <p id="mensajeTarea" class="error"></p>
             </div>
 
             <!-- ========== Lista de Tareas ========== -->

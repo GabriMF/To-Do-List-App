@@ -21,9 +21,11 @@ const form = document.getElementById('form-tarea');
 const inputTitulo = document.getElementById('tituloTarea');
 const inputDescripcion = document.getElementById('descripcionTarea');
 const inputFecha = document.getElementById('fechaLimiteTarea');
+const submitButton = form.querySelector('button[type="submit"]');
 
-const mensaje = document.getElementById('mensaje');
-
+const mensajeLogin = document.getElementById('mensajeLogin');
+const mensajeTarea = document.getElementById('mensajeTarea');
+let editingTaskId = null;
 
 // ====================
 // Lógica Login
@@ -33,11 +35,11 @@ loginButton.addEventListener('click', async () => {
     const usuario = loginUser.value.trim();
     const password = loginPass.value.trim();
 
-    mensaje.textContent = "";
+    mensajeLogin.textContent = "";
 
     // Validación básica
     if (!usuario || !password) {
-        mensaje.textContent = "Introduce usuario y contraseña";
+        mensajeLogin.textContent = "Introduce usuario y contraseña";
         return;
     }
 
@@ -51,7 +53,7 @@ loginButton.addEventListener('click', async () => {
         });
 
         if (response.status === 401) {
-            mensaje.textContent = "Usuario o contraseña incorrectos";
+            mensajeLogin.textContent = "Usuario o contraseña incorrectos";
             return;
         }
 
@@ -69,7 +71,7 @@ loginButton.addEventListener('click', async () => {
         iniciarApp();
 
     } catch (error) {
-        mensaje.textContent = "Error al conectar con el servidor";
+        mensajeLogin.textContent = "Error al conectar con el servidor";
         console.error(error);
     }
 });
@@ -103,24 +105,31 @@ loadTasksButton.addEventListener('click', cargarTareas);
 
 // Función para determinar el estado de la tarea
 function obtenerEstadoTarea(deadline) {
+    if (!deadline) {
+        return 'tareaSinFecha';
+    }
+
     const ahora = new Date();
     const deadlineDate = new Date(deadline);
-    const hoy = new Date();
-    hoy.setHours(0, 0, 0, 0);
-    const mañana = new Date(hoy);
+    if (Number.isNaN(deadlineDate.getTime())) {
+        return 'tareaNormal';
+    }
+
+    const mañana = new Date(ahora);
     mañana.setDate(mañana.getDate() + 1);
+
 
     if (deadlineDate < ahora) {
         return 'tareaVencida'; // Rojo: vencida
     } else if (deadlineDate < mañana) {
         return 'tareaProxima'; // Naranja: vence hoy
-    } else {
+    } else{
         return 'tareaNormal'; // Verde: normal
     }
 }
 
 async function cargarTareas() {
-    mensaje.textContent = "";
+    mensajeTarea.textContent = "";
 
     try {
         const response = await fetch(API_URL, {
@@ -158,24 +167,40 @@ async function cargarTareas() {
                     <div class="tituloTarea">${task.title}</div>
                     <div class="descripcionTarea">${task.description}</div>
                     <br/>
-                    <div class="fechaLimiteTarea">${new Date(task.deadline).toLocaleString()}</div>
+                    <div class="fechaLimiteTarea">${task.deadline ? new Date(task.deadline).toLocaleString() : 'Sin fecha límite'}</div>
                 </div>
             `;
 
-            // Botón eliminar
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = "Eliminar";
+            // Botones eliminar/editar
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('botonesAccion');
 
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('botonEliminar');
+            deleteButton.textContent = "Eliminar";
             deleteButton.addEventListener('click', async () => {
                 await eliminarTarea(task.id);
             });
 
-            li.appendChild(deleteButton);
+            const editButton = document.createElement('button');
+            editButton.textContent = "Editar";
+            editButton.addEventListener('click', () => {
+                editingTaskId = task.id;
+                inputTitulo.value = task.title;
+                inputDescripcion.value = task.description;
+                inputFecha.value = task.deadline ? task.deadline.substring(0, 16) : "";
+                submitButton.textContent = "Guardar cambios";
+                mensajeTarea.textContent = "Edita los datos y pulsa Guardar cambios";
+            });
+
+            buttonContainer.appendChild(editButton);
+            buttonContainer.appendChild(deleteButton);
+            li.appendChild(buttonContainer);
             listaTareas.appendChild(li);
         });
 
     } catch (error) {
-        mensaje.textContent = "Error al cargar tareas";
+        mensajeTarea.textContent = "Error al cargar tareas";
         console.error(error);
     }
 }
@@ -188,29 +213,30 @@ async function cargarTareas() {
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    mensaje.textContent = "";
+    mensajeTarea.textContent = "";
 
     // VALIDACIÓN
-    if (!inputTitulo.value || !inputDescripcion.value || !inputFecha.value) {
-        mensaje.textContent = "Todos los campos son obligatorios";
+    if (!inputTitulo.value || !inputDescripcion.value) {
+        mensajeTarea.textContent = "Título y descripción son obligatorios";
         return;
     }
 
-    const nuevaTarea = {
+    const tareaPayload = {
         title: inputTitulo.value,
         description: inputDescripcion.value,
-        deadline: inputFecha.value + ":00"
+        deadline: inputFecha.value ? inputFecha.value + ":00" : null
     };
 
     try {
-
-        const response = await fetch(API_URL, {
-            method: 'POST',
+        const method = editingTaskId ? 'PUT' : 'POST';
+        const url = editingTaskId ? API_URL + editingTaskId : API_URL;
+        const response = await fetch(url, {
+            method,
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Basic ' + btoa(USUARIO + ':' + PASSWORD)
             },
-            body: JSON.stringify(nuevaTarea)
+            body: JSON.stringify(tareaPayload)
         });
 
         if (!response.ok) {
@@ -219,16 +245,19 @@ form.addEventListener('submit', async (e) => {
 
         const data = await response.json();
 
-        console.log("Tarea creada:", data);
+        console.log(editingTaskId ? "Tarea editada:" : "Tarea creada:", data);
 
-        // Limpiar formulario
+        // Limpiar formulario y estado de edición
         form.reset();
+        editingTaskId = null;
+        submitButton.textContent = "Crear tarea";
+        mensajeTarea.textContent = "";
 
         // Recargar lista automáticamente
         cargarTareas();
 
     } catch (error) {
-        mensaje.textContent = "Error al crear tarea";
+        mensajeTarea.textContent = "Error al crear tarea";
         console.error(error);
     }
 });
@@ -256,7 +285,7 @@ async function eliminarTarea(id) {
         cargarTareas();
 
     } catch (error) {
-        mensaje.textContent = "Error al eliminar tarea";
+        mensajeTarea.textContent = "Error al eliminar tarea";
         console.error(error);
     }
 }
