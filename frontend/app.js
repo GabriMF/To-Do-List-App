@@ -140,6 +140,7 @@ async function cargarTareas() {
         });
 
         if (!response.ok) {
+            
             throw new Error("Error HTTP: " + response.status);
         }
 
@@ -147,12 +148,6 @@ async function cargarTareas() {
 
         // Limpiar lista
         listaTareas.innerHTML = "";
-
-        // Si no hay tareas
-        if (data.length === 0) {
-            listaTareas.innerHTML = "<p>No hay tareas</p>";
-            return;
-        }
 
         // Pintar tareas correctamente
         data.forEach(task => {
@@ -200,7 +195,7 @@ async function cargarTareas() {
         });
 
     } catch (error) {
-        mensajeTarea.textContent = "Error al cargar tareas";
+        listaTareas.innerHTML = "<p>No hay tareas</p>";
         console.error(error);
     }
 }
@@ -219,7 +214,7 @@ form.addEventListener('submit', async (e) => {
     if (!inputTitulo.value || !inputDescripcion.value) {
         mensajeTarea.textContent = "Título y descripción son obligatorios";
         return;
-    }
+    }    
 
     const tareaPayload = {
         title: inputTitulo.value,
