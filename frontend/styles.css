@@ -1,85 +1,146 @@
-/* Estilos básicos y estados de tarea */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #dadada;
+    margin: 0;
+    color: #333;
 }
 
-.controls {
-  margin: 12px 0;
-  display: flex;
-  gap: 8px;
-  align-items: center;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004070;
+    color: white;
+    height: 10vh;
+}
+.userSide{
+    display: flex;
+    align-items: center;
+    padding: 2vw;
+}
+#userName {
+    margin-right: 20px;
+    font-weight: bold;
 }
 
-.auth-section {
-  margin-bottom: 12px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: wrap;
+/* Título */
+h1 {
+    text-align: center;
+    padding: 20px;
 }
 
-.status-message {
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 4px;
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
 }
 
-.status-message.info { background-color: #e7f3ff; color: #1a56db; border: 1px solid #b6d4fe; }
-.status-message.success { background-color: #e6ffed; color: #1f6e3f; border: 1px solid #9ae6b4; }
-.status-message.error { background-color: #fcebea; color: #c53030; border: 1px solid #feb2b2; }
-.status-message.warning { background-color: #fff7e6; color: #975a16; border: 1px solid #f6e05e; }
-
-.loading {
-  margin-bottom: 12px;
-  font-weight: bold;
+/* COLUMNAS */
+.form-section,
+.list-section {
+    background-color: rgb(161, 161, 161);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
 }
 
-.task-counter {
-  margin-left: auto;
-  font-weight: bold;
+/* Formulario más estrecho */
+.form-section {
+    flex: 1;
+    padding: 3vw;
+    max-width: 350px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+/* Lista ocupa más */
+.list-section {
+    flex: 2;
 }
 
-th, td {
-  padding: 8px;
-  border: 1px solid #ddd;
-  vertical-align: top;
+/* Inputs */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
-
-.hidden { display: none; }
-
-.form-errors {
-  margin-top: 10px;
-  border: 1px solid #e74c3c;
-  background-color: #fdecea;
-  color: #a94442;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.form-errors ul {
-  margin: 0;
-  padding-left: 18px;
-}
-
-.form-errors li {
-  margin-bottom: 4px;
-}
-
-.task-details { color: #666; font-size: 0.9em; margin-top: 6px; }
-
-/* Estados de tarea */
-.overdue { background-color: #ffd6d6; }
-.upcoming { background-color: #fff5cc; }
-.no-deadline { background-color: #e6f7ff; }
 
 /* Botones */
-button { margin-right: 6px; }
-button:disabled { opacity: 0.6; cursor: not-allowed; }
+button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-.no-tasks { margin-top: 12px; font-style: italic; }
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Lista */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9fafb;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tituloTarea{
+    font-weight: bold;
+}
+
+/* Estados de tareas */
+li.tareaVencida {
+    background-color: #ffcccc;
+    border-left: 4px solid #e74c3c;
+}
+
+li.tareaProxima {
+    background-color: #ffe6cc;
+    border-left: 4px solid #f39c12;
+}
+
+li.tareaNormal {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+}
+
+/* Botón eliminar */
+li button {
+    background-color: #e74c3c;
+}
+
+li button:hover {
+    background-color: #c0392b;
+}
+
+/* LOGIN centrado */
+#login-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.error{
+    color: red;
+    margin-top: 10px;
+}

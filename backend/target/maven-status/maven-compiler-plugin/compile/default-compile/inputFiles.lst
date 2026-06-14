@@ -1,24 +1,24 @@
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/TodoRestApplication.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/config/CorsConfig.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/config/SpringdocConfig.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/config/WebConfig.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/controller/TaskController.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/dto/EditTaskDto.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/dto/GetTaskDto.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/error/CustomAccessDeniedHandler.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/error/CustomAuthenticationEntryPoint.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/error/GlobalErrorController.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/error/TaskNotFoundException.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/model/Task.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/repos/TaskRepository.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/security/CustomUserDetailsService.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/security/PasswordEncoderConfig.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/security/SecurityConfig.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/service/TaskService.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/users/NewUserCommand.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/users/NewUserResponse.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/users/OwnerCheck.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/users/User.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/users/UserController.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/users/UserRepository.java
-/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do List/backend/src/main/java/com/openwebinars/todo/rest/users/UserService.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/TodoRestApplication.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/config/CorsConfig.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/config/SpringdocConfig.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/config/WebConfig.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/controller/TaskController.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/dto/EditTaskDto.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/dto/GetTaskDto.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/error/CustomAccessDeniedHandler.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/error/CustomAuthenticationEntryPoint.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/error/GlobalErrorController.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/error/TaskNotFoundException.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/model/Task.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/repos/TaskRepository.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/security/CustomUserDetailsService.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/security/PasswordEncoderConfig.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/security/SecurityConfig.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/service/TaskService.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/users/NewUserCommand.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/users/NewUserResponse.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/users/OwnerCheck.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/users/User.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/users/UserController.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/users/UserRepository.java
+/home/gobi/Cosas Clase/DAW 2/Evaluación Extraordinaria/Proyecto/TFG/To-Do_list_2/To-Do-List-App/backend/src/main/java/com/openwebinars/todo/rest/users/UserService.java
