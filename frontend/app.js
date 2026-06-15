@@ -1,7 +1,7 @@
-const API_URL = 'http://localhost:8080/task/';
+const API_URL = 'https://to-do-list-app-9wb1.onrender.com/task/';
 
-let USUARIO = "";
-let PASSWORD = "";
+let USUARIO = "Gabi";
+let PASSWORD = "1234";
 
 // Elementos login
 const loginContainer = document.getElementById('login-container');
